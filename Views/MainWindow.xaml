@@ -1,0 +1,89 @@
+﻿<Window x:Class="WPF_Lab_final.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Lab_final"
+        xmlns:vm="clr-namespace:WPF_Lab_final.ViewModels"      
+        mc:Ignorable="d"
+        Title="Калькулятор" Height="728" Width="450" MinHeight="528" MinWidth="450">
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid Background="#FFE6E6E6" Margin="0,0,0,0">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.3*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="2.28*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.ColumnSpan="2"
+                   Text="{Binding Path=OperationField}"
+                   TextAlignment="Right" Margin="5"/>
+        <TextBlock Grid.Row="1" Text="{Binding Path=Field}" FontSize="48" FontWeight="Bold"
+                   Padding="10" Margin="2"
+                   HorizontalAlignment="Right" VerticalAlignment="Center"
+                   TextWrapping="NoWrap" TextAlignment="Right" />
+        <UniformGrid Grid.Row="2" Rows="5" Columns="4" Margin="2">
+            <Button Content="CE"
+                    Background="#FFF0F0F0"
+                    Command="{Binding Path=CleanEntryBtn}"/>
+            <Button Content="C"
+                    Background="#FFF0F0F0"
+                    Command="{Binding Path=ClearBtn}" />
+            <Button Content="Õ"
+                    Background="#FFF0F0F0" FontFamily="Wingdings"
+                    Command="{Binding Path=BackspaceBtn}"/>
+            <Button Content="÷"
+                    Background="#FFF0F0F0"
+                    Command="{Binding Path=DivideBtn}"/>
+            <Button Content="7"
+                    Background="#FFFAFAFA"
+                    Command="{Binding Path=SevenBtn}"/>
+            <Button Content="8"
+                    Background="#FFFAFAFA"
+                    Command="{Binding Path=EightBtn}"/>
+            <Button Content="9"
+                    Background="#FFFAFAFA"
+                    Command="{Binding Path=NineBtn}"/>
+            <Button Content="×"
+                    Background="#FFF0F0F0"
+                    Command="{Binding Path=MultiplyBtn}"/>
+            <Button Content="4"
+                    Background="#FFFAFAFA"
+                    Command="{Binding Path=FourBtn}"/>
+            <Button Content="5"
+                    Background="#FFFAFAFA"
+                    Command="{Binding Path=FiveBtn}"/>
+            <Button Content="6"
+                    Background="#FFFAFAFA"
+                    Command="{Binding Path=SixBtn}"/>
+            <Button Content="‒"
+                    Background="#FFF0F0F0"
+                    Command="{Binding Path=MinusBtn}"/>
+            <Button Content="1"
+                    Background="#FFFAFAFA"
+                    Command="{Binding Path=OneBtn}"/>
+            <Button Content="2"
+                    Background="#FFFAFAFA"
+                    Command="{Binding Path=TwoBtn}"/>
+            <Button Content="3"
+                    Background="#FFFAFAFA"
+                    Command="{Binding Path=ThreeBtn}"/>
+            <Button Content="+"
+                    Background="#FFF0F0F0"
+                    Command="{Binding Path=PlusBtn}"/>
+            <Button Content="±"
+                    Background="#FFFAFAFA"
+                    Command="{Binding Path=ChangeSignBtn}"/>
+            <Button Content="0"
+                    Background="#FFFAFAFA"
+                    Command="{Binding Path=ZeroBtn}"/>
+            <Button Content=","
+                    Background="#FFFAFAFA"
+                    Command="{Binding Path=CommaBtn}"/>
+            <Button Content="="
+                    Background="#FF9EA2A8"
+                    Command="{Binding Path=EqualBtn}"/>
+        </UniformGrid>
+    </Grid>
+</Window>
